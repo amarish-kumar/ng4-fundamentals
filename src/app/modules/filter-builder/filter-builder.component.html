@@ -1,0 +1,19 @@
+<div *ngFor="let record of filters; let i=index" class="row"> 
+    <div class="col-md-3">                     
+      <select (change)="fieldUpdated(record, $event.target.value, $event)" class="form-control">
+        <option [selected]="record.selectedField === field.value" *ngFor="let field of record['fields'];" [value]="field.value">{{field.label}}</option>
+      </select>
+    </div>
+    <div class="col-md-3">        
+      <select class="form-control">
+        <option [selected]="record.selectedOperator === op.value"  *ngFor="let op of record['operators'][record.selectedFieldType];" [value]="op.value">{{op.label}}</option>
+      </select>
+    </div>                   
+    <div class="col-md-3">        
+      <input class="form-control" type="text" [value]="record.value"/>
+    </div>    
+    <div class="col-md-3">        
+      <button [disabled]="filters.length == 10" *ngIf="i != 9" (click)="onNewRecord()" class="btn btn-default btn-md">Add</button>
+      <button *ngIf="i > 0" (click)="onRemoveRecord(record)" class="btn btn-default btn-md">Remove</button>
+  </div>
+</div>

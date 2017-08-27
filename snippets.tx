@@ -1,0 +1,4 @@
+<div class="col-md-3">        
+    <button *ngIf="i<10" (click)="onNewRecord()" class="btn btn-default btn-md">Add</button>
+    <button *ngIf="i>0" (click)="onRemoveRecord(record)" class="btn btn-default btn-md">Remove</button>
+</div>
