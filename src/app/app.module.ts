@@ -7,7 +7,8 @@ const APP_ROUTES: Routes = [
   {path:'', redirectTo:'filter-module', pathMatch:'full'},
   {path: 'filter-module', loadChildren: './modules/filter-builder/filter-builder.module#FilterBuilderModule'},
   {path: 'forms-module', loadChildren: './modules/forms/forms.module#FormModule'},
-  {path: 'pipes-module', loadChildren: './modules/pipes/pipes.module#PipesModule'}  
+  {path: 'pipes-module', loadChildren: './modules/pipes/pipes.module#PipesModule'}, 
+  {path: '**', redirectTo:'filter-module'} 
 ];
 const APP_ROUTING: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES, {useHash: true});
 
