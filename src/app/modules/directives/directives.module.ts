@@ -4,7 +4,7 @@ import {RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DirectivesComponent } from './directives.component';
 import { TruncateDirective } from './truncate/truncate.directive';
-import { SpinnerDirective } from './spinner.directive';
+import { SpinnerDirective } from './spinner/spinner.directive';
 
 
 const DIRECTIVES_MODULE_ROUTES: Routes = [  
