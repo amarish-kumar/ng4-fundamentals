@@ -4,6 +4,7 @@ import {RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DirectivesComponent } from './directives.component';
 import { TruncateDirective } from './truncate/truncate.directive';
+import { SpinnerDirective } from './spinner.directive';
 
 
 const DIRECTIVES_MODULE_ROUTES: Routes = [  
@@ -17,6 +18,6 @@ const DIRECTIVES_MODULE_ROUTING: ModuleWithProviders = RouterModule.forChild(DIR
     CommonModule,    
     DIRECTIVES_MODULE_ROUTING
   ],
-  declarations: [DirectivesComponent, TruncateDirective]
+  declarations: [DirectivesComponent, TruncateDirective, SpinnerDirective]
 })
 export class DirectivesModule { }
