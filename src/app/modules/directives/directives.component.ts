@@ -34,7 +34,7 @@ export class DirectivesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    setInterval(()=>this.networkActivity =  !this.networkActivity, 2000);
+    setInterval(()=>this.networkActivity =  !this.networkActivity, 3000);
   }
 
 }

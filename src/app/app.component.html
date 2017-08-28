@@ -13,10 +13,10 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">          
-          <li><a [routerLink]="['/filter-module']">Template binding</a></li>
-          <li><a [routerLink]="['/directives-module']">Directives</a></li>          
-          <li><a [routerLink]="['/forms-module']">Forms</a></li>          
-          <li><a [routerLink]="['/pipes-module']">Pipes</a></li>                    
+          <li [routerLinkActive]="['active']" ><a [routerLink]="['/filter-module']">Template binding</a></li>
+          <li [routerLinkActive]="['active']" ><a [routerLink]="['/directives-module']">Directives</a></li>          
+          <li [routerLinkActive]="['active']" ><a [routerLink]="['/forms-module']">Forms</a></li>          
+          <li [routerLinkActive]="['active']" ><a [routerLink]="['/pipes-module']">Pipes</a></li>                    
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
