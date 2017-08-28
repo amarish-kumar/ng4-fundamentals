@@ -56,7 +56,7 @@ export class SpinnerDirective implements OnInit, OnDestroy, OnChanges {
   removeBlocker(){
     let ele = (this._ele.nativeElement as HTMLElement);
     this._renderer.setStyle(this._ele.nativeElement, "position", this._originalPos);
-    if(this._blocker && ele)
+    if(this._renderer && this._blocker && ele)
       this._renderer.removeChild(ele, this._blocker);
   }
 
