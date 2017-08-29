@@ -1,6 +1,6 @@
 <ng-template #plain>
-  <div>
-    <span *ngIf="disabled; else enabledTmpl" class="badge">${{value}}</span>
+  <div [ngClass]="{'disabled':disabled}">
+    <span *ngIf="disabled; else enabledTmpl" class="badge">{{value}}</span>
     <ng-template #enabledTmpl><span (click)="onClick($event)" class="badge">{{value}}</span></ng-template>
   </div>
 </ng-template>

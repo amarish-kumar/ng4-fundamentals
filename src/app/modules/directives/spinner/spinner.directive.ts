@@ -56,8 +56,12 @@ export class SpinnerDirective implements OnInit, OnDestroy, OnChanges {
   removeBlocker(){
     let ele = (this._ele.nativeElement as HTMLElement);
     this._renderer.setStyle(this._ele.nativeElement, "position", this._originalPos);
-    if(this._renderer && this._blocker && ele)
-      this._renderer.removeChild(ele, this._blocker);
+    try{
+      if(this._renderer && this._blocker && ele)      
+        this._renderer.removeChild(ele, this._blocker);
+    }catch(e){
+      //FIXME : to verriy, throwing node is not a child. Being removed earlier than this call?
+    }
   }
 
   ngOnDestroy(): void {

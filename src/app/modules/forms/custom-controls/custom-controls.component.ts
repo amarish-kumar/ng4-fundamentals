@@ -4,14 +4,18 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export const AGE_INPUT_VALUE_ACCESSOR : any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => CustomControlsComponent),
-  multi: true,
+  multi: true
 };
 
 
 @Component({
   selector: 'app-custom-control',
   templateUrl: './custom-controls.component.html',
-  styles: [],
+  styles: [`
+    .disabled .badge{
+      background:lightgrey
+    }
+  `],
   providers: [AGE_INPUT_VALUE_ACCESSOR]
 })
 export class CustomControlsComponent implements OnInit, ControlValueAccessor {
