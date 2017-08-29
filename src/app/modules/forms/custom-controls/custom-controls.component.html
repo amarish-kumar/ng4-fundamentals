@@ -1,0 +1,9 @@
+<ng-template #plain>
+  <div>
+    <span *ngIf="disabled; else enabledTmpl" class="badge">${{value}}</span>
+    <ng-template #enabledTmpl><span (click)="onClick($event)" class="badge">{{value}}</span></ng-template>
+  </div>
+</ng-template>
+  <div *ngIf="editable; else plain">
+    <input type="number" [value]="value" (blur)="onBlur($event)" (change)="onChnage($event)"/>
+  </div>

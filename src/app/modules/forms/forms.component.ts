@@ -19,11 +19,12 @@ export class FormsComponent implements OnInit,OnDestroy {
     this.logF =  new FormGroup({
                         "email": new FormControl("", [Validators.required, Validators.email] ),
                         "password": new FormControl("", [Validators.required]),
+                        "age": new FormControl(0, [Validators.required]),
                       });
     Observable.merge(this.logF.statusChanges)
     .takeWhile(v=>!this.destroyed)
     .subscribe((changes)=>{
-      console.log(this.logF.pristine)
+      console.log(this.logF.value);
     }, (e)=>console.error(e), ()=>console.info("finished"));
     
   }
